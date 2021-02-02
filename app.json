@@ -1,0 +1,12 @@
+{
+  "name": "idubo",
+  "displayName": "idubo",
+  "expo": {
+    "name": "idubo",
+    "slug": "idubo",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
