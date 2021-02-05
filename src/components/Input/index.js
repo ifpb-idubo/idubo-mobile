@@ -8,26 +8,35 @@ const Input = ({ value, onChangeText, label, type, reference, next }) => {
   const [inputProps, setInputProps] = useState({ label });
 
   useEffect(() => {
+    let propsCopy = { ...inputProps };
     switch (type) {
       case 'PASSWORD':
-        setInputProps({
-          ...inputProps,
+        propsCopy = {
+          ...propsCopy,
           autoCompleteType: 'password',
           secureTextEntry: true,
           textContentType: 'password',
-        });
+        };
         break;
+      case 'EMAIL':
+        propsCopy = {
+          ...propsCopy,
+          autoCompleteType: 'email',
+          textContentType: 'emailAddress',
+          keyboardType: 'email-address',
+        };
     }
     if (next) {
-      setInputProps({
-        ...inputProps,
+      propsCopy = {
+        ...propsCopy,
         returnKeyType: 'next',
         blurOnSubmit: false,
         onSubmitEditing: () => {
           next.current.focus();
         },
-      });
+      };
     }
+    setInputProps(propsCopy);
   }, []);
 
   return (
