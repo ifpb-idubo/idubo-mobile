@@ -48,11 +48,11 @@ Input.propTypes = {
   type: PropTypes.string.isRequired,
   reference: PropTypes.oneOfType([
     PropTypes.func,
-    PropTypes.shape({ current: PropTypes.element }),
+    PropTypes.shape({ component: PropTypes.instanceOf(React.Component) }),
   ]).isRequired,
   next: PropTypes.oneOfType([
     PropTypes.func,
-    PropTypes.shape({ current: PropTypes.element }),
+    PropTypes.shape({ component: PropTypes.instanceOf(React.Component) }),
   ]),
 };
 
