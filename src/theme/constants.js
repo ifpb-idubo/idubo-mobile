@@ -11,8 +11,11 @@ const metrics = {
 
 const font = {
   primary: {
-    regular: 'Montserrat_400Regular',
     bold: 'Montserrat_700Bold',
+    medium: 'Montserrat_500Medium',
+    regular: 'Montserrat_400Regular',
+    light: 'Montserrat_300Light',
+    thin: 'Montserrat_100Thin',
   },
 };
 
@@ -20,7 +23,7 @@ const colors = {
   primary: '#50B054',
   light: '#4FBF05',
   accent: '#2E1F01',
-  background: '#E0E0E0',
+  background: '#FFFFFF',
   white: '#E0E0E0',
   black: '#151522',
   modalBackground: 'rgba(0, 0, 0, .6)',
@@ -28,7 +31,7 @@ const colors = {
   finalGradient: '#2EFFC3',
   grayInitialGradient: '#666',
   grayFinalGradient: '#999',
-  placeholder: '#E4E4E4',
+  placeholder: '#C2C2C2',
 };
 
 const lightShadow = {
