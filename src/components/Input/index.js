@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { TextInput } from 'react-native-paper';
+import PropTypes from 'prop-types';
 
 import styles from './styles';
 
@@ -38,6 +39,21 @@ const Input = ({ value, onChangeText, label, type, reference, next }) => {
       {...inputProps}
     />
   );
+};
+
+Input.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChangeText: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  reference: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.element }),
+  ]).isRequired,
+  next: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.element }),
+  ]),
 };
 
 export default Input;
