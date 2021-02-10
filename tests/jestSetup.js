@@ -7,3 +7,13 @@ jest.mock('react-native-reanimated', () => {
 });
 
 jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
+
+jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter.js', () => {
+  const { EventEmitter } = require('events');
+  return EventEmitter;
+});
+
+jest.mock('react-native-keyboard-aware-scroll-view', () => {
+  const KeyboardAwareScrollView = ({ children }) => children;
+  return { KeyboardAwareScrollView };
+});
