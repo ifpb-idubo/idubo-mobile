@@ -7,6 +7,7 @@ const metrics = {
   height,
   pagePadding: 20,
   pagePaddingTop: 40,
+  titleWidth: width - 40,
 };
 
 const font = {
