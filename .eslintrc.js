@@ -43,5 +43,7 @@ module.exports = {
     'import/no-mutable-exports': 'off',
     'global-require': 'off',
     camelcase: 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'default-case': 'off',
   },
 };
