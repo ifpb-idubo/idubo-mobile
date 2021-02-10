@@ -9,6 +9,7 @@ const Input = ({ value, onChangeText, props }) => (
     style={styles.container}
     value={value}
     onChangeText={onChangeText}
+    testID="input"
     {...props}
   />
 );
