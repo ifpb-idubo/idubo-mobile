@@ -2,7 +2,7 @@ jobs:
   test:
     executor:
       name: node/default
-      tag: '12'
+      tag: '12.20.2'
     steps:
       - checkout
       - node/install-packages:
