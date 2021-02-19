@@ -62,3 +62,9 @@ buck-out/
 # Expo
 .expo/*
 web-build/
+
+# Sentry configuration
+ios/sentry.properties
+android/sentry.properties
+
+.env

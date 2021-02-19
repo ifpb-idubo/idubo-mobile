@@ -8,6 +8,8 @@
 
 - Faça um clone do repositório ```$ git clone https://github.com/ifpb-idubo/idubo-mobile.git```
 - Instale as dependencias ```$ yarn```
+- Copie o conteúdo de `.env.example` e preencha ```$ cp .env.example .env```
+- Setup do Sentry ```$ yarn sentry```
 - Faça build para android ```$ yarn android```
 - Inicie o Metro Bundler ```$ yarn start```
 
