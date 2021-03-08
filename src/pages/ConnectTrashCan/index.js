@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import BleManager from 'react-native-ble-manager';
 import Config from 'react-native-config';
+import NetInfo from '@react-native-community/netinfo';
 
 import { BluetoothStatus } from 'react-native-bluetooth-status';
 
@@ -63,7 +64,12 @@ const ConnectTrashCan = () => {
     if (!peripheral) {
       setStatus('error');
     } else {
-      setStatus('foundPeripheral');
+      NetInfo.fetch().then((state) => {
+        setStatus('foundPeripheral');
+        if (state.type === 'wifi') {
+          onChangeText(state.details.ssid, 0);
+        }
+      });
     }
   }
 
@@ -204,7 +210,7 @@ const ConnectTrashCan = () => {
     setInputs(inputsCopy);
   }, []);
 
-  if (status === 'scanning') {
+  if (status === 'scanning' || status === 'stoppedScan') {
     return (
       <View style={styles.container}>
         <Header title="CONFIGURAÇÃO DA LIXEIRA" />
@@ -275,7 +281,6 @@ const ConnectTrashCan = () => {
   return (
     <>
       <Header title="CONFIGURAÇÃO DA LIXEIRA" />
-      <Loading />
     </>
   );
 };
