@@ -101,4 +101,24 @@ const register = [
   },
 ];
 
-export { login, register };
+const trashCan = [
+  {
+    name: 'ssid',
+    type: 'TEXT',
+    value: '',
+    props: {
+      label: 'Nome da rede',
+    },
+  },
+  {
+    name: 'password',
+    type: 'PASSWORD',
+    value: '',
+    props: {
+      label: 'Senha da rede',
+      ...typesProps.password,
+    },
+  },
+];
+
+export { login, register, trashCan };

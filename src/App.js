@@ -3,6 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import * as Sentry from '@sentry/react-native';
 import Config from 'react-native-config';
 
+import { AuthProvider } from '~/contexts/auth';
+import { AlertsProvider } from '~/contexts/alerts';
 import Routes from '~/routes';
 
 Sentry.init({
@@ -11,7 +13,11 @@ Sentry.init({
 
 const App = () => (
   <NavigationContainer>
-    <Routes />
+    <AlertsProvider>
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
+    </AlertsProvider>
   </NavigationContainer>
 );
 

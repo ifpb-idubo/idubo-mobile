@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import Login from '~/assets/login.svg';
 import { Input, Button } from '~/components';
 import { login } from '~/constants/inputs';
+import { useAuth } from '~/contexts/auth';
 
 import { metrics } from '~/theme/constants';
 import styles from './styles';
@@ -12,10 +13,15 @@ import styles from './styles';
 const SignIn = () => {
   const [inputs, setInputs] = useState([]);
 
+  const { signIn } = useAuth();
   const navigation = useNavigation();
 
   function handleNavigateToSignUp() {
     navigation.navigate('SignUp');
+  }
+
+  function submitLogin() {
+    signIn();
   }
 
   function onChangeText(newValue, changeIndex) {
@@ -56,7 +62,7 @@ const SignIn = () => {
           <Text style={styles.activeText}>CADASTRE-SE</Text>
         </TouchableOpacity>
       </View>
-      <Button label="ENTRAR" onPress={() => {}} enabled />
+      <Button label="ENTRAR" onPress={submitLogin} enabled />
     </View>
   );
 };
