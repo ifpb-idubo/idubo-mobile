@@ -11,8 +11,11 @@ import {
 import * as SplashScreen from 'expo-splash-screen';
 import { Provider as PaperProvider } from 'react-native-paper';
 
+import { useAuth } from '~/contexts/auth';
 import theme from '~/theme/paper';
+
 import AuthRoutes from './auth.routes';
+import ConsumerRoutes from './consumer.routes';
 
 const Routes = () => {
   const [fontsLoaded] = useFonts({
@@ -22,6 +25,7 @@ const Routes = () => {
     Montserrat_300Light,
     Montserrat_100Thin,
   });
+  const { signed } = useAuth();
 
   useEffect(() => {
     async function keepSplash() {
@@ -37,7 +41,7 @@ const Routes = () => {
 
   return (
     <PaperProvider theme={theme}>
-      <AuthRoutes />
+      {signed ? <ConsumerRoutes /> : <AuthRoutes />}
     </PaperProvider>
   );
 };

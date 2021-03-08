@@ -11,7 +11,7 @@ const AlertsProvider = ({ children }) => {
     title,
     message,
     confirmBtn = 'OK',
-    cancelBtn = 'CANCEL',
+    cancelBtn = 'CANCELAR',
     isCancelable = false,
     onCloseCallback = () => {},
   }) {
@@ -27,7 +27,7 @@ const AlertsProvider = ({ children }) => {
 
   function newError({ message, onCloseCallback = () => {} }) {
     setAlert({
-      title: 'Whoops...',
+      title: 'Oops...',
       message,
       confirmBtn: 'OK',
       cancelBtn: '',
