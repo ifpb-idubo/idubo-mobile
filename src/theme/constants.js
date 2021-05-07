@@ -22,6 +22,7 @@ const font = {
 
 const colors = {
   primary: '#50B054',
+  secondary: '#4FBF05',
   light: '#4FBF05',
   accent: '#2E1F01',
   background: '#FDFCFA',
