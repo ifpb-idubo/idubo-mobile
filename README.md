@@ -4,6 +4,10 @@
 
 ♻💻 Repositório do aplicativo do projeto de pesquisa: IDUBO: PLATAFORMA WEB E LIXEIRA INTELIGENTE PARA GERENCIAMENTO DO DESPERDÍCIO DE RESÍDUOS ORGÂNICOS
 
+# Demontração
+
+https://user-images.githubusercontent.com/39802870/117477619-99e4c900-af34-11eb-97a9-83c2c9a39e23.mp4
+
 # Rodando o projeto
 
 - Faça um clone do repositório ```$ git clone https://github.com/ifpb-idubo/idubo-mobile.git```
