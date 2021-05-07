@@ -9,12 +9,17 @@ export const AuthProvider = ({ children }) => {
     setUser({ name: 'Temp User', id: 0 });
   }
 
+  function signOut() {
+    setUser(null);
+  }
+
   return (
     <AuthContext.Provider
       value={{
         signed: !!user,
         user,
         signIn,
+        signOut,
       }}
     >
       {children}
